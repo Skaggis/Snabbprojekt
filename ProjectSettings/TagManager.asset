@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PickUp
+  - Gun
+  - Shotgun
+  - Sword
   layers:
   - Default
   - TransparentFX
