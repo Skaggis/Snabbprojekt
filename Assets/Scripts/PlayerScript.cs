@@ -8,11 +8,12 @@ public class PlayerScript : MonoBehaviour
     public GameObject Player;
     public GameObject Teleport;
     public int movementSpeed;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0,0,0);
+        transform.position = spawnPoint.position;
     }
 
     // Update is called once per frame
