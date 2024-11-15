@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PickUp
+  - Gun
+  - Shotgun
+  - Sword
   layers:
   - Default
   - TransparentFX
@@ -11,7 +15,7 @@ TagManager:
   - Background
   - Water
   - UI
-  - 
+  - PlayerLevel
   - 
   - 
   - 
@@ -38,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 963623543
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
