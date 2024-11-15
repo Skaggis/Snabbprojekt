@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Teleport;
+    public GameObject GunBullet;
+    public GameObject ShotgunBullet;
     public int movementSpeed;
 
     // Start is called before the first frame update
@@ -23,6 +25,18 @@ public class PlayerScript : MonoBehaviour
 
         transform.Translate(Vector3.right * movementSpeed * inputX * Time.deltaTime);
         transform.Translate(Vector3.up * movementSpeed * inputY * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(GunBullet, transform.position, Quaternion.identity);
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Instantiate(ShotgunBullet, transform.position, Quaternion.identity);
+
+        }
 
     }
 
