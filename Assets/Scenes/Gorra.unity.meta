@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Gorra.unity.meta
 guid: 531a13337bb363f42bc60501e942858a
+========
+guid: 1913f2dcdad4ae749a0b7605a49ad43c
+>>>>>>>> Linns-Brach:Assets/Scenes/Linn.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

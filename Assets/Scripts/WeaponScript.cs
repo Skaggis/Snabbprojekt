@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
+    public GameObject Player;
+
+    public GameObject GunBullet;
     public float gunSpeed = 5;
     public int gunDmg = 1;
 
+    public GameObject ShotgunBullet;
     public float shotgunSpeed = 4;
     public int shotgunDmg = 4;
 
+    public GameObject Sword;
     public float swordSpeed = 5;
     public int swordDmg = 1;
 
@@ -18,10 +23,10 @@ public class WeaponScript : MonoBehaviour
     void Start()
     {
         // Gun
-        //Destroy(gameObject, 4f);
+        Destroy(GunBullet, 4f);
 
         //Shotgun
-        //Destroy(gameObject, 2f);
+        Destroy(ShotgunBullet, 2f);
 
         //Sword
     }
@@ -29,7 +34,8 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * gunSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up * gunSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up * shotgunSpeed * Time.deltaTime);
 
     }
 }
