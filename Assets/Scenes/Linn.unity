@@ -924,6 +924,7 @@ MonoBehaviour:
   Player: {fileID: 1935162864}
   Teleport: {fileID: 1796221172}
   movementSpeed: 1
+  spawnPoint: {fileID: 0}
 --- !u!4 &1935162867
 Transform:
   m_ObjectHideFlags: 0
@@ -938,9 +939,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
-  - {fileID: 1347954470}
-  - {fileID: 1566302024}
-  - {fileID: 687534417}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1935162868
