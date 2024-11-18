@@ -10,12 +10,13 @@ public class PlayerScript : MonoBehaviour
     public GameObject GunBullet;
     public GameObject ShotgunBullet;
     public int movementSpeed;
-    public Transform spawnPoint;
+    //public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = spawnPoint.position;
+       // transform.position = spawnPoint.position;
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -27,6 +28,8 @@ public class PlayerScript : MonoBehaviour
         transform.Translate(Vector3.right * movementSpeed * inputX * Time.deltaTime);
         transform.Translate(Vector3.up * movementSpeed * inputY * Time.deltaTime);
 
+
+        //roterar spelaren? åt vilket håll skjuts?
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(GunBullet, transform.position, Quaternion.identity);

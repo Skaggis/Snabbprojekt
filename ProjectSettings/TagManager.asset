@@ -8,6 +8,9 @@ TagManager:
   - Gun
   - Shotgun
   - Sword
+  - GunBullet
+  - ShotgunBullet
+  - Klot
   layers:
   - Default
   - TransparentFX

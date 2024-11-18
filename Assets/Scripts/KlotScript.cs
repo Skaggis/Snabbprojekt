@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 public class KlotScript : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject GunBullet;
+    public GameObject ShotgunBullet;
     public float movementSpeed;
 
     // Start is called before the first frame update
@@ -22,9 +24,16 @@ public class KlotScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        Debug.Log(other.tag);
+        if (other.tag == "Player"){
+            Player.SetActive(false);
+        }
+        
+        else if (other.tag == "GunBullet" || other.tag ==  "ShotgunBullet")
         {
+            Destroy(gameObject);
             Destroy(other.gameObject);
         }
     }
+
 }
