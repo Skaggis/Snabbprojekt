@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public float healthPlayer = 100;
     public GameObject Player;
     public GameObject Teleport;
     public GameObject GunBullet;

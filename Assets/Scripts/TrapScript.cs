@@ -8,11 +8,13 @@ public class TrapScript : MonoBehaviour
     //Skapa referens till önskad spriterenderer
     //Skapa referens till önskad boxcollider2D
     public SpriteRenderer WallSprite;
+    public BoxCollider2D FällaCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        WallSprite.enabled = false;
+        FällaCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,9 +24,12 @@ public class TrapScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other) 
     {
+;
         //Om "other" har namnet spelare
         if (other.gameObject.name == "Player")
         {
+            WallSprite.enabled = true;
+            FällaCollider.enabled = true;
             //Aktivera fällan
             //Steg 1: aktivera fällans spriterenderer
             //Steg 2: aktivera fällans box collider
