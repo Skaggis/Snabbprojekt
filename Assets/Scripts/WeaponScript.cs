@@ -5,25 +5,26 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
-    public GameObject Player;
 
-    public GameObject GunBullet;
-    public float gunSpeed = 5;
+    private GameObject GunBullet;
+    public float gunSpeed = 2;
     public int gunDmg = 1;
 
-    public GameObject ShotgunBullet;
-    public float shotgunSpeed = 4;
-    public int shotgunDmg = 4;
+    private GameObject ShotgunBullet;
+    public float shotgunSpeed = 2;
+    public int shotgunDmg = 1;
 
-    public GameObject Sword;
-    public float swordSpeed = 5;
+    private GameObject Sword;
+    public float swordSpeed = 1;
     public int swordDmg = 1;
+
+    public GameObject vägg;
 
     // Start is called before the first frame update
     void Start()
     {
         // Gun
-        Destroy(GunBullet, 4f);
+        Destroy(GunBullet, 2.5f);
 
         //Shotgun
         Destroy(ShotgunBullet, 2f);
@@ -38,4 +39,13 @@ public class WeaponScript : MonoBehaviour
         transform.Translate(Vector3.up * shotgunSpeed * Time.deltaTime);
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Walls")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

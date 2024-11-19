@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+//using UnityEngine.Windows;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class PlayerScript : MonoBehaviour
     public GameObject ShotgunBullet;
     public int movementSpeed;
     public Transform spawnPoint;
+    Quaternion rotation = Quaternion.Euler(0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = spawnPoint.position;
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -27,15 +30,43 @@ public class PlayerScript : MonoBehaviour
         transform.Translate(Vector3.right * movementSpeed * inputX * Time.deltaTime);
         transform.Translate(Vector3.up * movementSpeed * inputY * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (inputX > 0)
         {
-            Instantiate(GunBullet, transform.position, Quaternion.identity);
+
+            rotation = Quaternion.Euler(0, 0, -90);
+
+        }
+
+        else if (inputX < 0)
+        {
+            rotation = Quaternion.Euler(0, 0, 90);
+
+        }
+
+        else if (inputY > 0)
+        {
+            rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        else if (inputY < 0)
+        {
+            rotation = Quaternion.Euler(0, 0, -180f);
+
+
+        }
+
+        //riktning
+        if (Input.GetKeyDown(KeyCode.Space)){
+
+            Instantiate(GunBullet, transform.position, rotation);
 
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            Instantiate(ShotgunBullet, transform.position, Quaternion.identity);
+
+            Instantiate(ShotgunBullet, transform.position, rotation);
 
         }
 
@@ -45,7 +76,8 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.tag == "PickUp")
         {
-            transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0);
+            //måste spawna inom banan!
+            transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-4, 4), 0);
             Destroy(other.gameObject);
         }
 
