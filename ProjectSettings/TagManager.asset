@@ -11,6 +11,7 @@ TagManager:
   - GunBullet
   - ShotgunBullet
   - Klot
+  - Walls
   layers:
   - Default
   - TransparentFX

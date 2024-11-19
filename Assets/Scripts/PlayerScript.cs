@@ -11,12 +11,12 @@ public class PlayerScript : MonoBehaviour
     public GameObject GunBullet;
     public GameObject ShotgunBullet;
     public int movementSpeed;
-    //public Transform spawnPoint;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = spawnPoint.position;
+        transform.position = spawnPoint.position;
         gameObject.SetActive(true);
     }
 
@@ -35,20 +35,24 @@ public class PlayerScript : MonoBehaviour
 
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
 
+            //höger/vänster är inverterade
             if (inputX > 0){
 
                 rotation = Quaternion.Euler(0, 0, 90);
-                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, 90f));
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, -90f));
+                
 
             }
             if (inputX < 0){
                 rotation = Quaternion.Euler(0, 0, -90);
-                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, -90f));
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, 90));
+               
 
             }
+            
             if (inputY > 0){
                 rotation = Quaternion.Euler(0, 0, 180f);
-                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, 180f));
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, 0));
 
             }
             if (inputY < 0){
@@ -62,7 +66,37 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            Instantiate(ShotgunBullet, transform.position, Quaternion.identity);
+            Quaternion rotation = Quaternion.Euler(0, 0, 0);
+
+            //höger/vänster är inverterade
+            if (inputX > 0)
+            {
+
+                rotation = Quaternion.Euler(0, 0, 90);
+                Instantiate(ShotgunBullet, transform.position, Quaternion.Euler(0, 0, -90f));
+
+
+            }
+            if (inputX < 0)
+            {
+                rotation = Quaternion.Euler(0, 0, -90);
+                Instantiate(ShotgunBullet, transform.position, Quaternion.Euler(0, 0, 90));
+
+
+            }
+
+            if (inputY > 0)
+            {
+                rotation = Quaternion.Euler(0, 0, 180f);
+                Instantiate(ShotgunBullet, transform.position, Quaternion.Euler(0, 0, 0));
+
+            }
+            if (inputY < 0)
+            {
+                rotation = Quaternion.Euler(0, 0, -180f);
+                Instantiate(ShotgunBullet, transform.position, Quaternion.Euler(0, 0, -180f));
+
+            }
 
         }
 
@@ -72,6 +106,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.tag == "PickUp")
         {
+            //måste spawna inom banan!
             transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0);
             Destroy(other.gameObject);
         }

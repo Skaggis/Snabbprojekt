@@ -18,6 +18,8 @@ public class WeaponScript : MonoBehaviour
     public float swordSpeed = 1;
     public int swordDmg = 1;
 
+    public GameObject vägg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,15 @@ public class WeaponScript : MonoBehaviour
         transform.Translate(Vector3.up * shotgunSpeed * Time.deltaTime);
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Walls")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     //vector2 reflect
     /*
