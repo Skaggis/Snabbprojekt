@@ -10,12 +10,12 @@ public class PlayerScript : MonoBehaviour
     public GameObject GunBullet;
     public GameObject ShotgunBullet;
     public int movementSpeed;
-    //public Transform spawnPoint;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-       // transform.position = spawnPoint.position;
+        transform.position = spawnPoint.position;
         gameObject.SetActive(true);
     }
 

@@ -9,11 +9,13 @@ public class KlotScript : MonoBehaviour
     public GameObject GunBullet;
     public GameObject ShotgunBullet;
     public float movementSpeed;
+    public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), Random.Range(-8, 8));
+        transform.position = spawnPoint.position;
+        //transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), Random.Range(-8, 8));
     }
 
     // Update is called once per frame
@@ -35,5 +37,6 @@ public class KlotScript : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
 
 }

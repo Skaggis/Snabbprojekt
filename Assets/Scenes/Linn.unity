@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 1903397986}
   - component: {fileID: 1903397985}
   - component: {fileID: 1903397988}
+  - component: {fileID: 1903397989}
   m_Layer: 0
   m_Name: Klot
   m_TagString: Klot
@@ -516,6 +517,33 @@ MonoBehaviour:
   GunBullet: {fileID: 7929236669985467339, guid: 3ab1df4b610e8134c838f6db9b948af3, type: 3}
   ShotgunBullet: {fileID: 1229741507584524256, guid: 3063aeb1f4edd6843a2c0143b6d1c539, type: 3}
   movementSpeed: 0.5
+--- !u!50 &1903397989
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903397984}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1935162864
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +633,7 @@ MonoBehaviour:
   GunBullet: {fileID: 7929236669985467339, guid: 3ab1df4b610e8134c838f6db9b948af3, type: 3}
   ShotgunBullet: {fileID: 1229741507584524256, guid: 3063aeb1f4edd6843a2c0143b6d1c539, type: 3}
   movementSpeed: 1
+  spawnPoint: {fileID: 0}
 --- !u!4 &1935162867
 Transform:
   m_ObjectHideFlags: 0
@@ -673,7 +702,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935162864}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
