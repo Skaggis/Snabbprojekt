@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+//using UnityEngine.Windows;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class PlayerScript : MonoBehaviour
     public GameObject GunBullet;
     public GameObject ShotgunBullet;
     public int movementSpeed;
-    public Transform spawnPoint;
+    //public Transform spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = spawnPoint.position;
+        //transform.position = spawnPoint.position;
         gameObject.SetActive(true);
     }
 
@@ -29,10 +30,33 @@ public class PlayerScript : MonoBehaviour
         transform.Translate(Vector3.up * movementSpeed * inputY * Time.deltaTime);
 
 
-        //roterar spelaren? åt vilket håll skjuts?
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(GunBullet, transform.position, Quaternion.identity);
+        //riktning???
+        if (Input.GetKeyDown(KeyCode.Space)){
+
+            Quaternion rotation = Quaternion.Euler(0, 0, 0);
+
+            if (inputX > 0){
+
+                rotation = Quaternion.Euler(0, 0, 90);
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, 90f));
+
+            }
+            if (inputX < 0){
+                rotation = Quaternion.Euler(0, 0, -90);
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, -90f));
+
+            }
+            if (inputY > 0){
+                rotation = Quaternion.Euler(0, 0, 180f);
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, 180f));
+
+            }
+            if (inputY < 0){
+                rotation = Quaternion.Euler(0, 0, -180f);
+                Instantiate(GunBullet, transform.position, Quaternion.Euler(0, 0, -180f));
+
+            }
+
 
         }
 
