@@ -27,7 +27,7 @@ public class WeaponScript : MonoBehaviour
         Destroy(GunBullet, 2.5f);
 
         //Shotgun
-        Destroy(ShotgunBullet, 2.5f);
+        Destroy(ShotgunBullet, 2f);
 
         //Sword
     }
@@ -48,13 +48,4 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-
-    //vector2 reflect
-    /*
-    void OnCollisionEnter(Collision collision)
-    {
-        Vector2D inDirection = GetComponent<RigidBody2D>().velocity;
-        Vector2D inNormal = collision.contacts[0].normal;
-        Vector2D newVelocity = Vector2D.Reflect(inDirection, inNormal);
-    }*/
 }
