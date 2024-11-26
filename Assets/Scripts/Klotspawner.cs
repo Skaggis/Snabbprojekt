@@ -17,7 +17,8 @@ public class KlotSpawnerScript : MonoBehaviour
     {
 
             StartCoroutine(KlotSpawner());
-        
+        Player = GameObject.Find("Player");
+
 
         //transform.position = spawnPoint.position;
 

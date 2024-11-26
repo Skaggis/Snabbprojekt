@@ -18,7 +18,6 @@ public class WeaponScript : MonoBehaviour
     public float swordSpeed = 1;
     public int swordDmg = 1;
 
-    public GameObject vägg;
 
     // Start is called before the first frame update
     void Start()

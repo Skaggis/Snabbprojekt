@@ -22,16 +22,18 @@ public class KlotScript : MonoBehaviour
         spawnPoint = GameObject.Find("SpawnKlot").transform;
         transform.position = spawnPoint.position;
         Player = GameObject.Find("Player");
-        
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player != null)
+        if (Player != null && Player.activeInHierarchy)
         {
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, Time.deltaTime * movementSpeed);
+            Debug.Log(Player.activeInHierarchy);
         }
 
     }
