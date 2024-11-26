@@ -77,7 +77,7 @@ public class PlayerScript : MonoBehaviour
         if (other.tag == "PickUp")
         {
             //måste spawna inom banan!
-            transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-4, 4), 0);
+            transform.position = new Vector3(Random.Range(-6, 8), Random.Range(-4, 4), 0);
             Destroy(other.gameObject);
         }
 
